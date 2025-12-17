@@ -2,6 +2,8 @@
 
 Chrome extension that keeps your browsing tidy by capping how many tabs you can have open. When you try to exceed the limit, the newest tab is closed and a notification lets you know you've hit the cap.
 
+**Stay focused on what matters.** Tab Guard helps you break the habit of tab hoarding, keeping you focused on the tasks that truly matter. By limiting how many tabs you can have open at once, you'll reduce distractions, minimize context switching, and maintain a cleaner, more productive workspace.
+
 ## How to use
 - In Chrome, open `chrome://extensions` and enable **Developer mode**.
 - Click **Load unpacked** and select this `tab-guard` folder.

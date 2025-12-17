@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "Tab Guard",
   "description": "Keep your Chrome window tidy by capping how many tabs you can open. Tab Guard notifies you when you hit the limit.",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "permissions": [
     "tabs",
     "windows",

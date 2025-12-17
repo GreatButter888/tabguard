@@ -122,9 +122,28 @@
       color: var(--muted);
     }
     .support {
-      margin-top: 14px;
+      margin-top: 16px;
       display: flex;
       justify-content: center;
+    }
+    .bmc-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 18px;
+      border-radius: 999px;
+      background: #ffdd00;
+      color: #000;
+      font-family: "Cookie", "Inter", system-ui, sans-serif;
+      font-size: 18px;
+      text-decoration: none;
+      border: 1px solid rgba(0, 0, 0, 0.8);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+      transition: transform 0.08s ease, box-shadow 0.12s ease;
+    }
+    .bmc-button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.24);
     }
   </style>
 </head>
@@ -152,7 +171,9 @@
         Open windows right now: <span id="window-count">–</span>
       </div>
       <div class="support">
-        <script type="text/javascript" src="https://cdnjs.buymeacoffee.com/1.0.0/button.prod.min.js" data-name="bmc-button" data-slug="digitai" data-color="#FFDD00" data-emoji="☕" data-font="Cookie" data-text="Buy me a coffee" data-outline-color="#000000" data-font-color="#000000" data-coffee-color="#ffffff"></script>
+        <a class="bmc-button" href="https://buymeacoffee.com/digitai" target="_blank" rel="noreferrer">
+          ☕ Buy me a coffee
+        </a>
       </div>
     </div>
   </main>

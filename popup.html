@@ -10,154 +10,467 @@
       --bg: #0f172a;
       --card: #1e293b;
       --text: #e2e8f0;
+      --text-secondary: #cbd5e1;
       --muted: #94a3b8;
+      --border: rgba(148, 163, 184, 0.2);
       --accent: #22c55e;
-      --accent-strong: #16a34a;
+      --accent-hover: #16a34a;
+      --accent-light: rgba(34, 197, 94, 0.1);
+      --accent-focus: rgba(34, 197, 94, 0.2);
+      --warning: #f59e0b;
+      --warning-bg: rgba(245, 158, 11, 0.1);
+      --warning-border: rgba(245, 158, 11, 0.3);
       --danger: #ef4444;
+      --danger-bg: rgba(239, 68, 68, 0.1);
+      --danger-border: rgba(239, 68, 68, 0.3);
+      --success: #10b981;
+      --success-bg: rgba(16, 185, 129, 0.1);
+      --success-border: rgba(16, 185, 129, 0.3);
+      --info-bg: rgba(59, 130, 246, 0.1);
+      --info-border: rgba(59, 130, 246, 0.3);
+      --info-text: #3b82f6;
     }
+
     @media (prefers-color-scheme: light) {
       :root {
         --bg: #f8fafc;
         --card: #ffffff;
         --text: #0f172a;
-        --muted: #475569;
+        --text-secondary: #334155;
+        --muted: #64748b;
+        --border: rgba(148, 163, 184, 0.3);
         --accent: #0f9d58;
-        --accent-strong: #0b7d46;
+        --accent-hover: #0b7d46;
+        --accent-light: rgba(15, 157, 88, 0.08);
+        --accent-focus: rgba(15, 157, 88, 0.15);
+        --warning: #f59e0b;
+        --warning-bg: rgba(245, 158, 11, 0.08);
+        --warning-border: rgba(245, 158, 11, 0.25);
         --danger: #dc2626;
+        --danger-bg: rgba(220, 38, 38, 0.08);
+        --danger-border: rgba(220, 38, 38, 0.25);
+        --success: #059669;
+        --success-bg: rgba(5, 150, 105, 0.08);
+        --success-border: rgba(5, 150, 105, 0.25);
+        --info-bg: rgba(59, 130, 246, 0.08);
+        --info-border: rgba(59, 130, 246, 0.25);
+        --info-text: #2563eb;
       }
     }
-    * { box-sizing: border-box; }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       padding: 0;
       background: var(--bg);
       color: var(--text);
-      font: 14px/1.5 "Inter", "SF Pro Text", system-ui, -apple-system, sans-serif;
+      font: 14px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
+
     main {
-      width: 320px;
-      padding: 18px;
+      width: 360px;
+      padding: 16px;
     }
+
     .card {
       background: var(--card);
-      border-radius: 14px;
-      padding: 16px;
-      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
-      border: 1px solid rgba(255, 255, 255, 0.05);
+      border-radius: 12px;
+      padding: 20px;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
     }
-    h1 {
-      font-size: 18px;
-      margin: 0 0 4px;
-      letter-spacing: -0.02em;
+
+    @media (prefers-color-scheme: dark) {
+      .card {
+        box-shadow: 0 8px 30px rgba(0, 0, 0, 0.3);
+        border: 1px solid rgba(255, 255, 255, 0.05);
+      }
     }
+
     .header {
       display: flex;
       align-items: center;
-      gap: 10px;
-      margin-bottom: 8px;
+      gap: 12px;
+      margin-bottom: 16px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
     }
+
     .logo {
-      width: 40px;
-      height: 40px;
-      border-radius: 10px;
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.18);
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      flex-shrink: 0;
     }
-    p {
-      margin: 0 0 10px;
+
+    .header-text {
+      flex: 1;
+      min-width: 0;
+    }
+
+    h1 {
+      font-size: 20px;
+      font-weight: 600;
+      margin: 0 0 2px;
+      letter-spacing: -0.02em;
+      line-height: 1.3;
+    }
+
+    .tagline {
+      font-size: 12px;
       color: var(--muted);
+      margin: 0;
+      line-height: 1.4;
     }
+
+    .stats {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .stat-card {
+      background: var(--accent-light);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 12px;
+      text-align: center;
+    }
+
+    .stat-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 600;
+      color: var(--muted);
+      margin: 0 0 4px;
+    }
+
+    .stat-value {
+      font-size: 24px;
+      font-weight: 700;
+      color: var(--text);
+      line-height: 1;
+      font-feature-settings: "tnum";
+      font-variant-numeric: tabular-nums;
+    }
+
+    .stat-value.loading {
+      color: var(--muted);
+      font-size: 20px;
+    }
+
+    .alert {
+      padding: 12px;
+      border-radius: 8px;
+      font-size: 13px;
+      line-height: 1.5;
+      margin-bottom: 16px;
+      border: 1px solid;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      animation: slideIn 0.2s ease-out;
+    }
+
+    @keyframes slideIn {
+      from {
+        opacity: 0;
+        transform: translateY(-8px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .alert-icon {
+      flex-shrink: 0;
+      width: 16px;
+      height: 16px;
+      margin-top: 1px;
+    }
+
+    .alert-content {
+      flex: 1;
+    }
+
+    .alert-title {
+      font-weight: 600;
+      margin: 0 0 2px;
+    }
+
+    .alert-message {
+      margin: 0;
+    }
+
+    .alert.warning {
+      background: var(--warning-bg);
+      border-color: var(--warning-border);
+      color: var(--warning);
+    }
+
+    .alert.error {
+      background: var(--danger-bg);
+      border-color: var(--danger-border);
+      color: var(--danger);
+    }
+
+    .alert.success {
+      background: var(--success-bg);
+      border-color: var(--success-border);
+      color: var(--success);
+    }
+
+    .alert.info {
+      background: var(--info-bg);
+      border-color: var(--info-border);
+      color: var(--info-text);
+    }
+
+    .form-section {
+      margin-bottom: 16px;
+    }
+
     label {
       display: block;
       font-weight: 600;
-      margin-bottom: 6px;
+      font-size: 13px;
+      margin-bottom: 8px;
       color: var(--text);
     }
+
+    .input-wrapper {
+      position: relative;
+    }
+
     input[type="number"] {
       width: 100%;
       padding: 10px 12px;
-      border-radius: 10px;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      background: transparent;
+      border-radius: 8px;
+      border: 1.5px solid var(--border);
+      background: var(--card);
       color: var(--text);
-      font-size: 14px;
+      font-size: 15px;
+      font-weight: 500;
       outline: none;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+      font-feature-settings: "tnum";
+      font-variant-numeric: tabular-nums;
     }
+
+    input[type="number"]:hover {
+      border-color: var(--muted);
+    }
+
     input[type="number"]:focus {
       border-color: var(--accent);
-      box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.15);
+      box-shadow: 0 0 0 3px var(--accent-focus);
     }
+
+    input[type="number"].error {
+      border-color: var(--danger);
+    }
+
+    input[type="number"].error:focus {
+      box-shadow: 0 0 0 3px var(--danger-bg);
+    }
+
+    .helper-text {
+      font-size: 12px;
+      color: var(--muted);
+      margin: 6px 0 12px;
+      line-height: 1.4;
+    }
+
     button {
-      margin-top: 12px;
       width: 100%;
-      padding: 10px 12px;
-      border-radius: 10px;
+      padding: 11px 16px;
+      border-radius: 8px;
       border: none;
       cursor: pointer;
-      background: linear-gradient(135deg, var(--accent), var(--accent-strong));
-      color: #fff;
-      font-weight: 700;
+      background: var(--accent);
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 14px;
       letter-spacing: 0.01em;
-      transition: transform 0.08s ease, box-shadow 0.12s ease;
+      transition: background-color 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
     }
-    button:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+
+    button:hover:not(:disabled) {
+      background: var(--accent-hover);
+      box-shadow: 0 4px 12px rgba(34, 197, 94, 0.25);
     }
-    button:active {
-      transform: translateY(0);
-      box-shadow: none;
+
+    button:active:not(:disabled) {
+      transform: translateY(1px);
     }
-    .status {
-      margin-top: 10px;
-      min-height: 18px;
-      font-size: 12px;
-      color: var(--muted);
+
+    button:disabled {
+      opacity: 0.6;
+      cursor: not-allowed;
     }
-    .status.error {
-      color: var(--danger);
+
+    button:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
     }
-    .meta {
-      margin-top: 8px;
-      font-size: 12px;
-      color: var(--muted);
+
+    .button-spinner {
+      width: 14px;
+      height: 14px;
+      border: 2px solid rgba(255, 255, 255, 0.3);
+      border-top-color: #ffffff;
+      border-radius: 50%;
+      animation: spin 0.6s linear infinite;
     }
+
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--border);
+      margin: 16px 0;
+    }
+
     .support {
-      margin-top: 16px;
       display: flex;
       justify-content: center;
+      align-items: center;
+      min-height: 60px;
+    }
+
+    /* Buy Me a Coffee button styling */
+    .support a {
+      display: inline-flex;
+      align-items: center;
+      transition: transform 0.15s ease, opacity 0.15s ease;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .support a:hover {
+      transform: translateY(-2px);
+      opacity: 0.9;
+    }
+
+    .support a:active {
+      transform: translateY(0);
+    }
+
+    .support a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 2px;
+    }
+
+    /* Accessibility improvements */
+    .visually-hidden {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0, 0, 0, 0);
+      white-space: nowrap;
+      border-width: 0;
+    }
+
+    /* High contrast mode support */
+    @media (prefers-contrast: high) {
+      .card {
+        border: 2px solid var(--text);
+      }
+
+      input[type="number"],
+      button {
+        border: 2px solid currentColor;
+      }
+    }
+
+    /* Reduced motion support */
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
     }
   </style>
 </head>
 <body>
   <main>
     <div class="card">
-      <div class="header">
-        <img class="logo" src="icons/icon48.png" alt="Tab Guard logo">
-        <div>
+      <header class="header">
+        <img class="logo" src="icons/icon48.png" alt="">
+        <div class="header-text">
           <h1>Tab Guard</h1>
-          <p style="margin:0;color:var(--muted);">Keep your tab count under control.</p>
+          <p class="tagline">Control your tab overload</p>
+        </div>
+      </header>
+
+      <div class="stats">
+        <div class="stat-card">
+          <p class="stat-label">Open Tabs</p>
+          <div class="stat-value loading" id="tab-count" aria-live="polite">...</div>
+        </div>
+        <div class="stat-card">
+          <p class="stat-label">Windows</p>
+          <div class="stat-value loading" id="window-count" aria-live="polite">...</div>
         </div>
       </div>
-      <p>Set the maximum number of tabs you want open across Chrome windows.</p>
-      <div class="status" id="limit-hit" role="status" aria-live="polite"></div>
-      <form id="limit-form">
-        <label for="limit">Maximum tabs</label>
-        <input id="limit" name="limit" type="number" min="1" required>
-        <button type="submit">Save limit</button>
+
+      <div id="alert-container" role="alert" aria-live="assertive"></div>
+
+      <form id="limit-form" class="form-section">
+        <label for="limit">
+          Maximum Tab Limit
+        </label>
+        <div class="input-wrapper">
+          <input
+            id="limit"
+            name="limit"
+            type="number"
+            min="1"
+            max="9999"
+            step="1"
+            required
+            placeholder="e.g., 20"
+            aria-describedby="limit-helper limit-error"
+          >
+        </div>
+        <p class="helper-text" id="limit-helper">
+          Set how many tabs you can have open across all Chrome windows
+        </p>
+        <button type="submit" id="save-button">
+          <span id="button-text">Save Limit</span>
+        </button>
       </form>
-      <div class="status" id="status" role="status" aria-live="polite"></div>
-      <div class="meta">
-        Open tabs right now: <span id="tab-count">–</span>
-        <br>
-        Open windows right now: <span id="window-count">–</span>
-      </div>
+
+      <div id="status-container"></div>
+
+      <div class="divider"></div>
+
       <div class="support">
-        <a href="https://www.buymeacoffee.com/digitai" target="_blank" rel="noreferrer">
-          <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height:60px!important;width:217px!important;">
+        <a href="https://www.buymeacoffee.com/digitai" target="_blank" rel="noopener noreferrer">
+          <img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 50px !important;width: 180px !important;">
         </a>
       </div>
     </div>
   </main>
+
+  <!-- Load popup functionality first -->
   <script src="popup.js"></script>
 </body>
 </html>

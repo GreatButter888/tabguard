@@ -39,11 +39,6 @@ That's it! Tab Guard is now protecting you from tab overload.
 3. **Get Notified**: You'll see a notification explaining when and why a tab was closed
 4. **Monitor Your Tabs**: View real-time statistics of your open tabs and windows in the popup
 
-## Screenshots
-
-![Tab Guard Popup](./screenshots/popup.png)
-*Clean, intuitive interface with real-time statistics*
-
 ## Privacy & Permissions
 
 Tab Guard respects your privacy and only requests the minimum permissions necessary:

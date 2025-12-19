@@ -5,10 +5,12 @@ All notable changes to Tab Guard will be documented in this file.
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
-## [1.0.5] - 2025-12-18
+## [1.0.5] - 2025-12-19
 
 ### Fixed
-- Updated README, CONTRIBUTING, popup UI, and repository badges to point to [GreatButter888/tabguard](https://github.com/GreatButter888/tabguard)
+- Removed unnecessary `tabs` permission per Chrome Web Store policy (violation ref: Purple Potassium)
+- Extension now requests only the narrowest permissions necessary
+- All tab operations continue to function without the `tabs` permission
 
 ## [1.0.4] - 2025-12-17
 

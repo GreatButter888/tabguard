@@ -4,7 +4,10 @@
 
 [![Chrome Web Store](https://img.shields.io/badge/Chrome-Web%20Store-blue?logo=googlechrome&logoColor=white)](https://chrome.google.com/webstore)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
-[![GitHub Stars](https://img.shields.io/github/stars/yourusername/tab-guard?style=social)](https://github.com/yourusername/tab-guard)
+[![GitHub Stars](https://img.shields.io/github/stars/GreatButter888/tabguard?style=social)](https://github.com/GreatButter888/tabguard)
+
+**Official Repository:** [GreatButter888/tabguard](https://github.com/GreatButter888/tabguard)\
+**Latest Release:** [v1.0.5](https://github.com/GreatButter888/tabguard/compare/v1.0.4...v1.0.5) — updated documentation, popup button, and badges to reference the correct GitHub project.
 
 ## Overview
 
@@ -69,8 +72,8 @@ tab-guard/
 
 1. Clone this repository:
    ```bash
-   git clone https://github.com/yourusername/tab-guard.git
-   cd tab-guard
+   git clone https://github.com/GreatButter888/tabguard.git
+   cd tabguard
    ```
 
 2. Load the extension in Chrome:
@@ -95,8 +98,8 @@ See [CHANGELOG.md](./CHANGELOG.md) for a detailed history of changes.
 
 ## Support
 
-- 🐛 **Found a bug?** [Open an issue](https://github.com/yourusername/tab-guard/issues)
-- 💡 **Have a feature request?** [Start a discussion](https://github.com/yourusername/tab-guard/discussions)
+- 🐛 **Found a bug?** [Open an issue](https://github.com/GreatButter888/tabguard/issues)
+- 💡 **Have a feature request?** [Start a discussion](https://github.com/GreatButter888/tabguard/discussions)
 - ☕ **Enjoy Tab Guard?** [Buy me a coffee](https://www.buymeacoffee.com/jacobleecolangelo)
 
 ## License
@@ -108,7 +111,7 @@ This project is licensed under the MIT License - see the [LICENSE](./LICENSE) fi
 **Jacob Colangelo**
 - Website: [jacobcolangelo.com](https://jacobcolangelo.com)
 - Email: jacob@jacobcolangelo.com
-- GitHub: [@yourusername](https://github.com/yourusername)
+- GitHub: [@GreatButter888](https://github.com/GreatButter888)
 
 ---
 

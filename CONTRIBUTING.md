@@ -71,8 +71,8 @@ Feature requests are welcome! Please open an issue that includes:
 
 1. **Fork and clone** the repository:
    ```bash
-   git clone https://github.com/yourusername/tab-guard.git
-   cd tab-guard
+   git clone https://github.com/GreatButter888/tabguard.git
+   cd tabguard
    ```
 
 2. **Load the extension** in Chrome for testing:
